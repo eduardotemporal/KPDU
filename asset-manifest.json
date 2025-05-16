@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4d8a312d.css",
+    "main.js": "/static/js/main.694dd164.js",
+    "static/media/auditorium.png": "/static/media/auditorium.30fc602c23a60f0c1092.png",
+    "static/media/purposehall.png": "/static/media/purposehall.9108ab1b1ad9472dc99c.png",
+    "static/media/dance.jpg": "/static/media/dance.a97a583f63bf1489d0f6.jpg",
+    "static/media/party.jpg": "/static/media/party.28af16051d28b76092d6.jpg",
+    "static/media/conference.jpg": "/static/media/conference.7eb59851d1ea43adcda9.jpg",
+    "static/media/csa.jpg": "/static/media/csa.0d127df0aae6a7e42a42.jpg",
+    "static/media/together.jpg": "/static/media/together.319e66cb1a97d490211c.jpg",
+    "static/media/task_icon.png": "/static/media/task_icon.c79bb678fd6ad3c9a492.png",
+    "static/media/document_icon.png": "/static/media/document_icon.07c25270828ed040c617.png",
+    "static/media/user_icon.png": "/static/media/user_icon.83ce9ac7932a6ed7b348.png",
+    "index.html": "/index.html",
+    "main.4d8a312d.css.map": "/static/css/main.4d8a312d.css.map",
+    "main.694dd164.js.map": "/static/js/main.694dd164.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d8a312d.css",
+    "static/js/main.694dd164.js"
+  ]
+}
