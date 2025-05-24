@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../images/csa.jpg';
 
 const navLinks = [
@@ -8,6 +8,13 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Toggle mobile menu visibility
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="bg-white px-6 md:px-12 py-8 border-b border-[#02AB60]/30 relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between">
@@ -23,8 +30,18 @@ const Header = () => {
           />
         </h1>
 
-        {/* Navigation */}
-        <nav>
+        {/* Mobile Hamburger Menu Icon */}
+        <div className="block md:hidden">
+          <button
+            onClick={toggleMobileMenu}
+            className="text-[#0A2C40] text-3xl focus:outline-none"
+          >
+            &#9776; {/* Hamburger Icon */}
+          </button>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:block">
           <ul className="flex space-x-12 text-[#0A2C40] font-extrabold text-xl md:text-2xl uppercase tracking-wider">
             {navLinks.map(({ label, href }) => (
               <li key={label}>
@@ -39,6 +56,22 @@ const Header = () => {
           </ul>
         </nav>
 
+        {/* Mobile Navigation (Hidden on Desktop, visible on small screens) */}
+        <nav className={`absolute top-0 left-0 w-full bg-white shadow-lg md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+          <ul className="flex flex-col items-center py-4 space-y-4 text-[#0A2C40] font-extrabold text-xl">
+            {navLinks.map(({ label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="relative pb-2 hover:text-[#02AB60] transition duration-300 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-[#02AB60] after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        
       </div>
     </header>
   );

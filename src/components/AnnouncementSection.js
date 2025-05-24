@@ -1,14 +1,17 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import TogetherImage from '../images/together.jpg';
+import benilde6 from '../images/benilde6.jpg';
+import benilde8 from '../images/benilde8.jpg';
+import benilde9 from '../images/benilde9.jpg';
+import benilde10 from '../images/benilde10.jpg';
 
 // Sample announcement data
 const announcements = [
-  { title: 'Campus Cleanup Drive', description: 'Join us this Saturday for a community cleanup event.', type: 'Event', image: TogetherImage, works: 12, awards: 5, website: 'campusdrive.org' },
-  { title: 'New Resource Center Hours', description: 'CSA Resource Center is now open 8am–6pm, Mon to Fri.', type: 'Notice', image: TogetherImage, works: 6, awards: 2, website: 'csaresource.org' },
-  { title: 'Volunteer Briefing', description: 'Mandatory Zoom orientation for all new volunteers.', type: 'Urgent', image: TogetherImage, works: 3, awards: 1, website: 'volunteerhub.org' },
-  { title: 'Charity Auction Night', description: 'Bid and support education at our charity auction night.', type: 'Event', image: TogetherImage, works: 10, awards: 3, website: 'charityauction.org' },
-  { title: 'Green Week Launch', description: 'Celebrate sustainability with a week of green events.', type: 'Event', image: TogetherImage, works: 8, awards: 4, website: 'greenweek.org' },
+  { title: 'Campus Cleanup Drive', description: 'Join us this Saturday for a community cleanup event.', type: 'Event', image: benilde6, works: 12,  website: 'benilde.com' },
+  { title: 'New Resource Center Hours', description: 'CSA Resource Center is now open 8am–6pm, Mon to Fri.', type: 'Notice', image: benilde8, works: 6, website: 'csa.com' },
+  { title: 'Volunteer Briefing', description: 'Mandatory Zoom orientation for all new volunteers.', type: 'Urgent', image: benilde9, works: 3,  website: 'facebook.com' },
+  { title: 'Charity Auction Night', description: 'Bid and support education at our charity auction night.', type: 'Event', image: benilde10, works: 10, website: 'dlsuxbenilde.com' },
+  { title: 'Green Week Launch', description: 'Celebrate sustainability with a week of green events.', type: 'Event', image: benilde6, works: 8,  website: 'benilde.com' },
 ];
 
 const CARD_WIDTH = 500;
@@ -37,20 +40,20 @@ const SketchLine = ({ top, left, width, text, rotate = 0, animate }) => (
 
 // Card component with reduced height
 const AnnouncementCard = ({ item }) => (
-  <div className="flex-shrink-0 w-[500px] h-[560px] bg-[#222222] text-white rounded-2xl overflow-hidden shadow-2xl">
+  <div className="flex-shrink-0 w-full sm:w-[350px] md:w-[500px] h-[560px] bg-[#222222] text-white rounded-2xl overflow-hidden shadow-2xl mb-8 sm:mb-0">
     <div className="w-full h-[200px] bg-cover bg-center" style={{ backgroundImage: `url(${item.image})` }} />
-    <div className="p-8 flex flex-col justify-between h-[360px]">
+    <div className="p-4 sm:p-8 flex flex-col justify-between h-[360px]">
       <div>
-        <span className="text-base text-green-400 mb-2 block">{item.type}</span>
-        <h3 className="text-4xl font-extrabold leading-snug mb-4">{item.title}</h3>
-        <p className="text-lg text-gray-300">{item.description}</p>
+        <span className="text-sm sm:text-base text-green-400 mb-2 block">{item.type}</span>
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-snug mb-4">{item.title}</h3>
+        <p className="text-sm sm:text-base text-gray-300">{item.description}</p>
       </div>
-      <div className="text-base text-gray-400 mt-auto">
+      <div className="text-sm sm:text-base text-gray-400 mt-auto">
         <div className="flex justify-between items-center mb-1">
           <span>{item.website}</span>
-          <span className="px-3 py-1 bg-white text-black text-sm rounded-md">Works {item.works}</span>
+          <span className="px-3 py-1 bg-white text-black text-sm rounded-md">June {item.works}</span>
         </div>
-        <span>{item.awards} awards</span>
+        <span></span>
       </div>
     </div>
   </div>
@@ -83,11 +86,10 @@ const AnnouncementSection = () => {
   };
 
   return (
-   <section
-  ref={sectionRef}
-  className="relative bg-[#02AB60] w-full py-20 overflow-hidden announcement-blueprint-bg"
->
-
+    <section
+      ref={sectionRef}
+      className="relative bg-[#02AB60] w-full py-20 sm:py-12 overflow-hidden announcement-blueprint-bg"
+    >
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <SketchLine top="40px" left="10%" width="280px" text="Announcement Guide" animate={inView} />
         <SketchLine top="160px" left="65%" width="200px" animate={inView} />
@@ -97,8 +99,8 @@ const AnnouncementSection = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-[1700px] mx-auto px-4 md:px-6 relative z-10">
-        <h2 className="text-5xl font-black text-white text-left mb-12 tracking-tight glow-text ml-8">Announcements</h2>
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white text-left mb-12 tracking-tight glow-text ml-8">Announcements</h2>
         <div className="relative">
           <div className="flex items-center justify-center">
             <button
